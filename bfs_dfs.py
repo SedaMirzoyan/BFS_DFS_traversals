@@ -14,7 +14,6 @@ def bfs(input_graph, node):
         print(n)
 
         for neighbour in input_graph[n]:
-            #print(i)
             if neighbour not in visited_bfs:
                 visited_bfs.append(neighbour)
                 node_queue.append(neighbour)
@@ -31,7 +30,6 @@ def dfs(graph, node):
         print(n)
 
         for neighbour in graph[n]:
-            #print(i)
             if neighbour not in visited_dfs:
                 visited_dfs.append(neighbour)
                 node_stack.append(neighbour)
