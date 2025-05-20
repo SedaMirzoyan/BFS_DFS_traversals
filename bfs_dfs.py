@@ -7,38 +7,30 @@ visited_dfs = []
 def bfs(input_graph, node):
     visited_bfs.append(node)
     node_queue.append(node)
-    #print(node)
 
     while(node_queue):
         n = node_queue.pop(0)
         print(n)
-        #print("node_queue ", node_queue)
 
         for neighbour in input_graph[n]:
-            #print("neighbour ", neighbour)
             if neighbour not in visited_bfs:
                 visited_bfs.append(neighbour)
                 node_queue.append(neighbour)
-                #print("node_queue in for", node_queue)
 
 
 #DFS
 def dfs(graph, node):
     visited_dfs.append(node)
     node_stack.append(node)
-    #print(node)
 
     while(node_stack):
         n = node_stack.pop()
         print(n)
-        print("node_stack ", node_stack)
 
         for neighbour in graph[n]:
-            print("neighbour ", neighbour)
             if neighbour not in visited_dfs:
                 visited_dfs.append(neighbour)
                 node_stack.append(neighbour)
-                print("node_stack ", node_stack)
 
 
 def main():
