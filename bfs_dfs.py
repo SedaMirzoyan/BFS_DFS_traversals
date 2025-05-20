@@ -12,11 +12,14 @@ def bfs(input_graph, node):
     while(node_queue):
         n = node_queue.pop(0)
         print(n)
+        #print("node_queue ", node_queue)
 
         for neighbour in input_graph[n]:
+            #print("neighbour ", neighbour)
             if neighbour not in visited_bfs:
                 visited_bfs.append(neighbour)
                 node_queue.append(neighbour)
+                #print("node_queue in for", node_queue)
 
 
 #DFS
@@ -28,11 +31,14 @@ def dfs(graph, node):
     while(node_stack):
         n = node_stack.pop()
         print(n)
+        print("node_stack ", node_stack)
 
         for neighbour in graph[n]:
+            print("neighbour ", neighbour)
             if neighbour not in visited_dfs:
                 visited_dfs.append(neighbour)
                 node_stack.append(neighbour)
+                print("node_stack ", node_stack)
 
 
 def main():
@@ -58,17 +64,32 @@ def main():
     'F' : []
     }
 
+    input_graph2 = {
+    '0' : ['1','3'],
+    '1' : ['2', '3', '5'],
+    '2' : ['1', '3', '5'],
+    '3' : ['0', '1', '2', '4'],
+    '4' : ['2', '3', '6'],
+    '5' : ['1', '2'],
+    '6' : ['1', '4']
+    }
+
     print("BFS of input graph")
     bfs(input_graph, '5')
     print("BFS of input graph1")
     bfs(input_graph1, 'A')
+    visited_bfs.clear()
     
     print("DFS of input graph")
     dfs(input_graph, '5')
     print("DFS of input graph1")
     dfs(input_graph1, 'A')
+    visited_dfs.clear()
 
 
+    print("DFS of input graph2 mmmmmmmmmmmmmmmmmmmmmmmmmmmmm")
+    dfs(input_graph2, '0')
+    visited_dfs.clear()
 
 
 if __name__=="__main__":
